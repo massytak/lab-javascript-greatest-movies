@@ -28,7 +28,16 @@ function howManyMovies(moviesList){
     return stevenDramaMovies.length ;
   };
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
-
+function ratesAverage (movies){
+    if (movies.length<1){
+        return 0
+    }
+    let sum=movies.reduce (function(acc , val){
+        let filmRate= +(val.rate)||0;
+        return acc + filmRate
+    },0)
+return +(sum/movies.length).toFixed(2);
+}
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
