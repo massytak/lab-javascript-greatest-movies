@@ -16,7 +16,7 @@
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors. How could you "clean" a bit this array and make it unified (without duplicates)?
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-
+/*
 function howManyMovies(moviesList){
   // On filtre les films de Steven S 
   let stevenMovies= moviesList.filter(function(el) {
@@ -35,9 +35,20 @@ function howManyMovies(moviesList){
 
 //la fonction doit nous retourner tous les films dont le réal est Spielberg
 
+*/
 
-
-
+function howManyMovies(moviesList){
+    // On filtre les films de Steven S 
+    let stevenMovies= moviesList.filter(function(el) {
+      return el.director==="Steven Spielberg"
+    }) // [ {...}, {...}, {. ]
+    // On filtre les dramas (de Steven S)
+    let stevenDramaMovies = stevenMovies.filter(function(el){
+      return el.genre.includes('Drama') // ture/false
+    })
+    return stevenDramaMovies.length ;
+  };
+>>>>>>> 2c200917de06001a3248bc07805a73612612f68e
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
